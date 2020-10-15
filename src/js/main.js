@@ -225,13 +225,13 @@ const remixArray = (array) => {
 }
 
 const shuffleWord = () => {
-    let wordLength = {min: 2, max: 1}
+    let wordLength = {min: 2, max: 4}
     let allSyllables = []
     destination.querySelectorAll('.word').forEach(word => {
         const wordSyllables = JSON.parse(word.dataset.syllables)
         allSyllables = [...allSyllables, ...wordSyllables]
         // wordLength.min = Math.min(wordLength.min, wordSyllables.length)
-        wordLength.max = Math.max(wordLength.max, wordSyllables.length)
+        // wordLength.max = Math.max(wordLength.max, wordSyllables.length)
     })
     let newWord = remixArray(allSyllables)
     newWord.length = Math.floor(wordLength.min + (Math.random() * wordLength.max))
