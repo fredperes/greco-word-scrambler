@@ -237,6 +237,19 @@
 		"oS": 0,
 		"sct": 0
 		},
+	"/src/css/components/_slider.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/src/css/components/_slider.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
 	"/src/css/components/README.md": {
 		"cB": 0,
 		"cS": 0,

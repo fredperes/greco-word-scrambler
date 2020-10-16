@@ -155,3 +155,18 @@
         background: #00f;
     }
 }
+
+.syllableCount {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    input {
+        margin-bottom: .6rem;
+    }
+    span {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: .8rem;
+    }
+}

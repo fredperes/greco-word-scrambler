@@ -4,6 +4,16 @@ const destination = document.querySelector(".destination")
 const origin = document.querySelector(".origin")
 const process = document.querySelector(".process")
 
+const slider = document.querySelector(".slider")
+let syllableCount
+
+const getSliderValue = () => {
+    slider.closest('.syllableCount').querySelector('span').textContent = slider.value+' sílaba'+(slider.value > 1 ? 's' : '')
+    syllableCount = slider.value
+}
+slider.addEventListener('change', getSliderValue)
+getSliderValue()
+
 const clipboard = new ClipboardJS('.btn--copy');
 clipboard.on('success', (e) => {
     e.trigger.classList.add('success')
@@ -73,7 +83,6 @@ const updateActions = () => {
     [destination, origin, process].forEach(section => {
         const sectionActions = section.closest('.section').querySelector('.actions')
         sectionActions.classList.remove('enabled')
-        console.log(section.className, section.textContent.trim().length)
         if (section.textContent.trim().length) sectionActions.classList.add('enabled')
     })
 }
@@ -225,7 +234,7 @@ const remixArray = (array) => {
 }
 
 const shuffleWord = () => {
-    let wordLength = {min: 2, max: 1}
+    // let wordLength = {min: 2, max: 1}
     let allSyllables = []
     destination.querySelectorAll('.word').forEach(word => {
         const wordSyllables = JSON.parse(word.dataset.syllables)
@@ -233,8 +242,10 @@ const shuffleWord = () => {
         // wordLength.min = Math.min(wordLength.min, wordSyllables.length)
         // wordLength.max = Math.max(wordLength.max, wordSyllables.length)
     })
+    while (allSyllables.length < syllableCount) allSyllables = [...allSyllables, ...allSyllables]
     let newWord = remixArray(allSyllables)
-    newWord.length = Math.floor(wordLength.min + (Math.random() * (wordLength.min - wordLength.max)))
+    // newWord.length = Math.floor(wordLength.min + (Math.random() * (wordLength.min - wordLength.max)))
+    newWord.length = syllableCount
     newWord = newWord.join('').toLowerCase()
     newWord = newWord.charAt(0).toUpperCase() + newWord.slice(1)
     process.querySelector('.result').innerHTML = newWord
