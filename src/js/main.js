@@ -248,8 +248,19 @@ const shuffleWord = () => {
     newWord.length = syllableCount
     newWord = newWord.join('').toLowerCase()
     newWord = newWord.charAt(0).toUpperCase() + newWord.slice(1)
-    process.querySelector('.result').innerHTML = newWord
+    process.querySelector('.result').textContent = newWord
     return newWord
+}
+
+const needsReshuffle = () => {
+    let willNeed = false
+    destination.querySelectorAll('.word').forEach(word => {
+        if (word.textContent.toLowerCase() == process.querySelector('.result').textContent.toLowerCase()) {
+            willNeed = true
+        }
+        if (destination.querySelectorAll('.word').length <= 1 && JSON.parse(word.dataset.syllables).length <= 1) willNeed = false
+    })
+    return willNeed
 }
 
 const sortear = function() {
@@ -257,8 +268,7 @@ const sortear = function() {
 
     (function foo() {
         shuffleWord()
-
-        if (counter < 10) {
+        if (counter < 10 || needsReshuffle() ) {
             counter++;
             setTimeout(foo, 50);
         }
