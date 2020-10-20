@@ -325,7 +325,8 @@ const clearDestination = () => {
 }
 document.querySelector('.btn--clear').addEventListener('click', clearDestination)
 
-const randomiseWords = () => {
+const randomiseWords = (e) => {
+    e.preventDefault()
     clearDestination()
     let randomWords = remixArray([...document.querySelectorAll('.container')])
     randomWords.length = 2
@@ -340,7 +341,15 @@ const randomiseWords = () => {
     // }
     updateActions()
 }
-document.querySelector('.btn--random').addEventListener('click', randomiseWords)
+document.querySelector('.btn--random').addEventListener('click', (e) => randomiseWords(e) )
+
+const addAllWords = (e) => {
+    e.preventDefault()
+    clearDestination()
+    document.querySelectorAll('.container').forEach( container => move(container.querySelector('.word')) )
+    updateActions()
+}
+document.querySelector('.btn--all').addEventListener('click', (e) => addAllWords(e) )
 
 const remixArray = (array) => {
     return array

@@ -491,7 +491,7 @@ h2 span {
 .scrambler {
   display: grid;
   grid: "origin destination process"/1fr 1fr 1fr;
-  padding: 2rem 2rem 0;
+  padding: 0 2rem 0;
   width: 100%;
   max-width: 100%;
   gap: 30px;
@@ -502,7 +502,13 @@ h2 span {
   flex-direction: column;
 }
 .scrambler .section header {
+  z-index: 4;
+  background: #fff;
+  padding: 2rem 0 1rem;
+  position: sticky;
+  top: 0px;
   margin-bottom: 1rem;
+  border-bottom: 1px solid;
 }
 .scrambler .section p {
   font-size: 0.8rem;
