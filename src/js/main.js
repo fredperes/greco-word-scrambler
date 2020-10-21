@@ -47,7 +47,6 @@ const wordSections = {
         ["Co","pan"],
         ["Co","rin","thi","ans"],
         ["Cri","o","lo"],
-        ["Gua","ra","pi","ran","ga"],
         ["Gui","a","cu","í"],
         ["Hi","gi","e","nó","po","lis"],
         ["I","bi","ra","pu","era"],
