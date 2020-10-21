@@ -566,6 +566,12 @@ h2 span {
 .scrambler .section--process .actions {
   justify-content: flex-end;
 }
+.scrambler footer {
+  grid-column: span 3;
+  display: block;
+  font-size: 0.8rem;
+  text-align: center;
+}
 
 .origin {
   display: flex;
