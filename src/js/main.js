@@ -86,6 +86,7 @@ const wordSections = {
 		["Pom", "peia"],
 		["Por", "tu", "gue", "sa"],
 		["Ra", "ja"],
+		["Ra", "ja", "man", "nar"],
 		["Re", "bou", "ças"],
 		["Re", "pú", "bli", "ca"],
 		["Re", "ti", "ran", "tes"],
